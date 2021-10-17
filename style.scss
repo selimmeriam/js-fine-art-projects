@@ -1,0 +1,351 @@
+///////////***Defined Variables****////////////
+$myColor: #f01251;
+$myBackground: #fff;
+$myBlack: #000;
+@mixin shadow($x, $y, $blur, $S, $c) {
+  box-shadow: $x $y $blur $S $c;
+  -moz-box-shadow: $x $y $blur $S $c;
+  -webkit-box-shadow: $x $y $blur $S $c;
+  -khtml-box-shadow: $x $y $blur $S $c;
+}
+
+////////////////////////////////////////////////
+.bg-custom {
+  background: $myBackground;
+}
+#header-1 {
+  #listed {
+    a {
+      color: $myColor;
+      &:hover {
+        color: #6a1b9a;
+      }
+    }
+  }
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+html {
+  @extend body;
+}
+body {
+  background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.7),
+      rgba(255, 255, 255, 0.3)
+    ),
+    url('https://www.seekpng.com/png/detail/1-16654_color-splash-no-background.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+}
+.size-im {
+  object-fit: cover;
+}
+.img-div {
+  width: 98%;
+  max-width: 100%;
+  display: block;
+  height: auto;
+  margin: auto;
+  //background:white;
+}
+.image img {
+  max-width: 100%;
+  /*this is the only way to make image responsive inside the flexbox*/
+  margin: auto;
+  display: block;
+  //border:2px solid #fff;
+}
+.image {
+  /*responsive*/
+  max-width: 99%;
+  height: auto;
+  /* */
+  /*centerized*/
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  /* */
+}
+#Hom {
+  //border:1px solid black;
+  margin-top: 100px;
+  margin-bottom: 20px;
+  text-align: center;
+  h3 {
+    display: inline-block;
+    padding: {
+      left: 5px;
+      right: 5px;
+    }
+  }
+  a {
+    text-decoration: none;
+    font-size: 18px;
+    color: $myColor;
+    margin: auto;
+    &:hover {
+      text-decoration: none;
+      animation: in 3s linear 1 normal backwards;
+    }
+  }
+  p {
+    font-size: 20px;
+    color: $myBlack;
+  }
+}
+#Our-Work {
+  //margin-top:100px;
+  .one {
+    max-width: 1200px;
+    h3 {
+      display: inline-block;
+      padding: {
+        left: 5px;
+        right: 5px;
+      }
+    }
+    a {
+      text-decoration: none;
+      font-size: 18px;
+      color: $myColor;
+      margin: auto;
+      &:hover {
+        text-decoration: none;
+        animation: in 3s linear 1 normal backwards;
+      }
+    }
+  }
+  .gallery {
+    max-width: 1400px;
+    //border:1px solid $myBlack;
+    .cards {
+      //border:2px solid green;
+      max-width: 1400px;
+      display: grid;
+      grid-gap: 1rem;
+      .card {
+        border: 1px solid rgba(0, 0, 0, 0);
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0);
+        text-align: center;
+        max-width: 330px;
+        height: 330px;
+        .gallery__img {
+          width: 300px;
+          height: 300px;
+          //border: 1px solid red;
+          border-radius: 10px;
+          object-fit: cover;
+          &:hover {
+            transform: scale(1.05, 1.05);
+            // border: 1px solid #777;
+            // @include shadow(2px, 2px, 3px, 2px, #f2f2f2);
+          }
+        }
+      }
+    }
+  }
+  .but {
+    button {
+      font-family: "Arial", sans-serif;
+      color: #fff;
+      background: $myColor;
+      font-size: 16px;
+      padding: 10px 15px;
+      margin-left: 0;
+      border-radius: 5px;
+      border: 1px solid $myColor;
+      &:hover {
+        border: 1px solid $myColor;
+        box-shadow: none;
+        transform: scale(1.1, 1.1);
+      }
+     
+    }
+  }
+}
+.gallery-zoom {
+  .lightbox {
+    display: none;
+    position: fixed;
+    top: 34px;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    &:target {
+      display: flex;
+    }
+  }
+  a:hover {
+    text-decoration: blue;
+    color: $myBackground;
+  }
+  a div {
+    position: relative;
+    margin: auto auto;
+    text-align: center;
+    span p {
+      text-decoration: none;
+      color: $myBackground;
+      margin-top: 10px;
+      font: {
+        weight: bold;
+        size: 20px;
+      }
+    }
+  }
+}
+#Contact-Us {
+  h3 {
+    display: inline-block;
+    padding: {
+      left: 5px;
+      right: 5px;
+    }
+  }
+  a {
+    text-decoration: none;
+    font-size: 18px;
+    color: $myColor;
+    margin: auto;
+    &:hover {
+      text-decoration: none;
+      animation: in 3s linear 1 normal backwards;
+    }
+  }
+  .social {
+    margin: auto;
+    //border:2px solid black;
+    max-width: 600px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    a {
+      text-align: center;
+      margin: auto;
+    }
+  }
+}
+#foot {
+  p {
+    font-size: 15px;
+  }
+}
+
+/*
+@-webkit-keyframes hvr-buzz {
+  50% {
+    -webkit-transform: translateX(3px) rotate(2deg);
+    transform: translateX(3px) rotate(2deg);
+  }
+  100% {
+    -webkit-transform: translateX(-3px) rotate(-2deg);
+    transform: translateX(-3px) rotate(-2deg);
+  }
+}
+@keyframes hvr-buzz {
+  50% {
+    -webkit-transform: translateX(3px) rotate(2deg);
+    transform: translateX(3px) rotate(2deg);
+  }
+  100% {
+    -webkit-transform: translateX(-3px) rotate(-2deg);
+    transform: translateX(-3px) rotate(-2deg);
+  }
+}*/
+/*.hvr-buzz {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+.hvr-buzz:hover, .hvr-buzz:focus, .hvr-buzz:active {
+  -webkit-animation-name: hvr-buzz;
+  animation-name: hvr-buzz;
+  -webkit-animation-duration: 0.15s;
+  animation-duration: 0.15s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+*/
+
+@keyframes in {
+  0% {
+    letter-spacing: 0em;
+    opacity: 1;
+  }
+  10% {
+    letter-spacing: 0.1em;
+    opacity: 1;
+  }
+  50% {
+    letter-spacing: 0.3em;
+    opacity: 1;
+  }
+  100% {
+    letter-spacing: 0.5em;
+    opacity: 1;
+  }
+}
+
+@media (min-width: 700px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 975px) {
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (min-width: 1300px) {
+  .cards {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media (max-width: 400px) {
+  #Our-Work {
+    .gallery {
+      .cards {
+        .card {
+          max-width: 300px;
+          height: 300px;
+          .gallery__img {
+            width: 280px;
+            height: 280px;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 340px) {
+  #Our-Work {
+    .gallery {
+      .cards {
+        .card {
+          .gallery__img {
+            width: 250px;
+            height: 250px;
+          }
+        }
+      }
+    }
+  }
+}
